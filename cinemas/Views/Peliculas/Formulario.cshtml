@@ -1,0 +1,66 @@
+﻿@model cinemas.Models.Entities.Recibo
+
+@{
+    ViewBag.Title = "Formulario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Ingrese sus datos</h2>
+
+@using (Html.BeginForm())
+{
+    <form method="post" action="#">
+        <div class="jumbotron">
+            <div class="form-group row">
+                <label for="example-text-input" class="col-md-4 col-form-label">Nombre</label>
+                <div class="col-md-8">
+                    <input class="form-control" type="text" id="example-text-input">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="example-text-input" class="col-md-4 col-form-label">Pelicula</label>
+                <div class="col-md-8">
+                    <input class="form-control" type="text" id="example-text-input" value="@ViewBag.Id" readonly="readonly">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="example-email-input" class="col-md-4 col-form-label">Email</label>
+                <div class="col-md-8">
+                    <input class="form-control" type="email" id="example-email-input">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="example-email-input" class="col-md-4 col-form-label">Horario</label>
+                <div class="col-md-8">
+                    <select class="form-control form-control-lg">
+                        @foreach (var horas in ViewBag.horas)
+                        {
+                            <option>@horas</option>
+
+                        }
+                                            </select>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label for="example-email-input" class="col-md-4 col-form-label">Fecha</label>
+                <div class="col-md-8">
+                    <div class="input-group date">
+                        <input type="text" class="form-control" readonly="readonly"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <p><input type="submit" class="btn btn-primary" value="Siguiente"></p>
+
+        </div>
+    </form>
+}
+
+
+
+
