@@ -240,10 +240,13 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="img\Cartelera.jpg" />
+    <Content Include="img\logo.png" />
     <Content Include="img\poster1.jpg" />
     <Content Include="img\poster2.jpg" />
     <Content Include="img\poster3.jpg" />
     <Content Include="img\poster4.jpg" />
+    <Content Include="img\Proximamente.jpg" />
     <Content Include="Scripts\bootstrap-datepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

@@ -129,14 +129,14 @@ namespace cinemas.Models.DALs
                 {
                     con.Open();
                     
-                    var query = new SqlCommand("SELECT hora FROM horario, pe_ho where id_pe=(select id from pelicula where Nombre=@nombre) and horario.id=id_ho", con);
+                    var query = new SqlCommand("SELECT horaInicio, horaFin FROM horario, pe_ho where id_pe=(select id from pelicula where Nombre=@nombre) and horario.id=id_ho", con);
                     query.Parameters.AddWithValue("@nombre", nombre);
                     using (var dr = query.ExecuteReader())
                     {
                         while (dr.Read())
                         {
                             // Usuario
-                            string hora = dr["hora"].ToString();
+                            string hora = dr["horaInicio"].ToString() + "-" + dr["horaFin"].ToString();
                             // Agregamos el usuario a la lista genreica
                             horarios.Add(hora);                           
                         }
