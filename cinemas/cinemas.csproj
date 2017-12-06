@@ -241,6 +241,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="img\Cartelera.jpg" />
+    <Content Include="img\logo.ico" />
     <Content Include="img\logo.png" />
     <Content Include="img\poster1.jpg" />
     <Content Include="img\poster2.jpg" />
@@ -299,6 +300,7 @@
     <Content Include="Views\Peliculas\Index.cshtml" />
     <Content Include="Views\Peliculas\Proximamente.cshtml" />
     <Content Include="Views\Peliculas\Formulario.cshtml" />
+    <Content Include="Views\Peliculas\Asientos.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

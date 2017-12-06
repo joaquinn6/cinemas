@@ -31,5 +31,11 @@ namespace cinemas.Controllers
                 return View();
             }
         }
+        [HttpPost]
+        public ActionResult Asientos()
+        {
+            return View();
+        }
+        
     }
 }
