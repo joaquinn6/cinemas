@@ -6,10 +6,9 @@
 }
 <h2>Ingrese sus datos</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Asientos","Peliculas", FormMethod.Post))
 {
-    <form asp-action="/Peliculas/Asientos" method="post">
-        <div class="jumbotron">
+    <div class="jumbotron">
             <div class="form-group row">
                 <label for="example-text-input" class="col-md-4 col-form-label">Nombre</label>
                 <div class="col-md-8">
@@ -57,7 +56,6 @@
 
             <input type="submit" class="btn btn-primary" value="Siguiente">
         </div>
-    </form>
 }
 
 

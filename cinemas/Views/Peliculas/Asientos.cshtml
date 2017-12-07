@@ -4,5 +4,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@{var nombre = Request.Form["Nombre"]}
-<h2>@nombre</h2>
+@{var nombre = Request.Form["Nombre"]; var Pelicula= Request.Form["Pelicula"]; var Email = Request.Form["Email"]; var Horario = Request.Form["Horario"]; var Fecha = Request.Form["Fecha"]; }
+
+<h2>@Horario</h2>

@@ -31,9 +31,10 @@ namespace cinemas.Controllers
                 return View();
             }
         }
-        [HttpPost]
-        public ActionResult Asientos()
+     [HttpPost]
+        public ActionResult Asientos(string Nombre, string Pelicula, string Email, string Horario, string Fecha)
         {
+            
             return View();
         }
         

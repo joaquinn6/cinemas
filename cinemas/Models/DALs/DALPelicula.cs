@@ -32,7 +32,8 @@ namespace cinemas.Models.DALs
                                 Nombre = dr["Nombre"].ToString(),
                                 Sinopsis = dr["Sinopsis"].ToString(),
                                 Poster = dr["Poster"].ToString(),
-                                Estado = dr["Estado"].ToString()
+                                Estado = dr["Estado"].ToString(),
+                                Trailer = dr["Trailer"].ToString()
                             };
 
                             // Agregamos el usuario a la lista genreica
@@ -72,7 +73,8 @@ namespace cinemas.Models.DALs
                                 Nombre = dr["Nombre"].ToString(),
                                 Sinopsis = dr["Sinopsis"].ToString(),
                                 Poster = dr["Poster"].ToString(),
-                                Estado = dr["Estado"].ToString()
+                                Estado = dr["Estado"].ToString(),
+                                Trailer = dr["Trailer"].ToString()
                             };
 
                             // Agregamos el usuario a la lista genreica
@@ -98,12 +100,13 @@ namespace cinemas.Models.DALs
             {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString()))
                 {
-                    var query = new SqlCommand("UPDATE pelicula SET Nombre=@Nombre, Sinopsis=@Sinopsis, Poster=@Poster, Estado=@Estado WHERE Id=@Id", con);
+                    var query = new SqlCommand("UPDATE pelicula SET Nombre=@Nombre, Sinopsis=@Sinopsis, Poster=@Poster, Estado=@Estado, Trailer=@Trailer WHERE Id=@Id", con);
                     query.Parameters.AddWithValue("@Nombres", pelicula.Nombre);
                     query.Parameters.AddWithValue("@Apellidos", pelicula.Sinopsis);
                     query.Parameters.AddWithValue("@Inss", pelicula.Poster);
                     query.Parameters.AddWithValue("@Id", pelicula.PeliculaId);
                     query.Parameters.AddWithValue("@Estado", pelicula.Estado);
+                    query.Parameters.AddWithValue("@Trailer", pelicula.Trailer);
                     con.Open();
                     int i = query.ExecuteNonQuery();
 

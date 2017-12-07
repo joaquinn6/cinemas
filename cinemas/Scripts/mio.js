@@ -8,6 +8,14 @@
         todayHighlight: true
     });
 
-      $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
+$( function() {
+    $("#datepicker").datepicker();
+
+    
+});
+
+$("#close1").click(function () {
+    var src = $("#yvideo1").attr("src");
+    $("#yvideo1").attr("src", "");
+    $("#yvideo1").attr("src", src);
+});
