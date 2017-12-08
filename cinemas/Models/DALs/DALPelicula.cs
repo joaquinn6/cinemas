@@ -152,5 +152,46 @@ namespace cinemas.Models.DALs
             }
             return horarios;
         }
+
+
+        public static List<Actores> actores(int id)
+        {
+            var actores = new List<Actores>();
+            try
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString()))
+                {
+                    con.Open();
+
+                    //var query = new SqlCommand("SELECT * FROM actores where Id=(select IdAct from pe_ac where IdPel=@id)", con);
+                    var query = new SqlCommand("SELECT actores.* FROM actores, pe_ac where IdPel=@id and IdAct=Id", con);
+                    query.Parameters.AddWithValue("@Id", id);
+                    using (var dr = query.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            // Usuario
+                            var actor = new Actores
+                            {
+                                ActoresId = Convert.ToInt32(dr["Id"]),
+                                Nombre = dr["Nombre"].ToString(),
+                                Nacionalidad = dr["Nacionalidad"].ToString(),
+                                Nacimiento = dr["Nacimiento"].ToString(),
+                                Perfil = dr["Perfil"].ToString(),
+                            };
+
+                            // Agregamos el usuario a la lista genreica
+                            actores.Add(actor);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+            return actores;
+        }
     }
 }

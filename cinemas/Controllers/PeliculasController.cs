@@ -34,8 +34,12 @@ namespace cinemas.Controllers
      [HttpPost]
         public ActionResult Asientos(string Nombre, string Pelicula, string Email, string Horario, string Fecha)
         {
-            
             return View();
+        }
+
+        public ActionResult Actores(int id)
+        {
+            return PartialView(DALPelicula.actores(id));
         }
         
     }
