@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using cinemas.Models.Entities;
 
 namespace cinemas.Controllers
 {
@@ -48,7 +49,7 @@ namespace cinemas.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        public ActionResult Detalles(int id=0)
+        public ActionResult Detalles(int id)
         {
             return PartialView(DALRegistro.Detalles(id));
         }

@@ -88,10 +88,9 @@ namespace cinemas.Models.DALs
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString()))
                 {
                     con.Open();
-                    var i = 1;
-                    
+
                     var query = new SqlCommand("SELECT * FROM recibo, horario, pe_ho, pelicula where pelicula.Id = pe_ho.id_pe and pe_ho.id_ho=horario.Id and recibo.id_pe_ho=pe_ho.Id and recibo.id=@Id", con);
-                    query.Parameters.AddWithValue("@Id", id);
+                    query.Parameters.AddWithValue("@Id", id.ToString());
                     using (var dr = query.ExecuteReader())
                     {
                         while (dr.Read())
@@ -126,7 +125,7 @@ namespace cinemas.Models.DALs
                                     horaFin = dr["horaFin"].ToString(),
                                     horaInicio = dr["horaInicio"].ToString(),
                                 },
-                                RegistroId = i
+                                RegistroId = 0
                             };
                             // Agregamos el usuario a la lista genreica
                         }
