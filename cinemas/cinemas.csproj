@@ -205,10 +205,12 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DALs\DALPelicula.cs" />
     <Compile Include="Models\DALs\DALRecibo.cs" />
+    <Compile Include="Models\DALs\DALRegistro.cs" />
     <Compile Include="Models\Entities\Actores.cs" />
     <Compile Include="Models\Entities\Horario.cs" />
     <Compile Include="Models\Entities\Pelicula.cs" />
     <Compile Include="Models\Entities\Recibo.cs" />
+    <Compile Include="Models\Entities\Registro.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -338,6 +340,8 @@
     <Content Include="Views\Peliculas\Formulario.cshtml" />
     <Content Include="Views\Peliculas\Asientos.cshtml" />
     <Content Include="Views\Peliculas\Actores.cshtml" />
+    <Content Include="Views\Peliculas\Registro.cshtml" />
+    <Content Include="Views\Peliculas\Detalles.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<cinemas.Models.Entities.Registro>
+
+<table class="table">
+    <tr>
+        <th>
+            Cliente
+        </th>
+        <th>
+            Pelicula
+        </th>
+        <th>
+            Fecha Pelicula
+        </th>
+        <th>
+            Reservado el
+        </th>
+        <th>
+            Asiento
+        </th>
+        <th>
+            Codigo
+        </th>
+        <th>
+            Correo
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.recibos.cliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.peliculas.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.recibos.fechaPelicula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.recibos.fechaNow)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.recibos.asiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.recibos.codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.recibos.correo)
+        </td>
+    </tr>
+}
+
+</table>

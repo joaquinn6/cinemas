@@ -52,6 +52,15 @@
                         <li>@Html.ActionLink("Cartelera", "index", "peliculas")<span class="sr-only">(current)</span></a></li>
                         <li>@Html.ActionLink("Proximamente", "proximamente", "peliculas")</li>
                     </ul>
+                    <ul class="nav navbar-nav">
+                        @if (User.IsInRole("Admin")) {
+                        <li>@Html.ActionLink("Registro", "Registro", "peliculas")</li>
+                        }
+                        else
+                        {
+                            <li><a href="Account/Login">Iniciar Sesion</a></li>
+                        }
+                    </ul>
                     <form class="navbar-form navbar-right">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Buscar">
@@ -70,7 +79,9 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
 
     <script src="~/Scripts/bootstrap-datepicker.min.js"></script>
-    <script src="~/Scripts/mio.js">
-    </script>
+    <script src="~/Scripts/mio.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

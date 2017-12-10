@@ -18,6 +18,16 @@ $( function() {
         }, 2000);
     });
 
+
+    $('.loadAjaxDetalles').click(function (event) {
+        $("#ajaxDe").load(event.target.id);
+        $('html,body').animate({
+            scrollTop: $("#ajaxDe").offset().top
+        }, 2000);
+    });
+
+
+
     $('#close1').click(function () {
         $('.modal').hide();
         $('.modal #yvideo1').attr("src", jQuery(".modal #yvideo1").attr("src"));

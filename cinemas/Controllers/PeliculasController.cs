@@ -41,6 +41,16 @@ namespace cinemas.Controllers
         {
             return PartialView(DALPelicula.actores(id));
         }
-        
+        [Authorize(Roles = "Admin")]
+        public ActionResult Registro()
+        {
+            return View(DALRegistro.Listar());
+        }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult Detalles(int id=0)
+        {
+            return PartialView(DALRegistro.Detalles(id));
+        }
     }
 }
