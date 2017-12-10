@@ -1,36 +1,22 @@
 ﻿@model IEnumerable<cinemas.Models.Entities.Actores>
+<div class="row">
+    
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3">
+            <div class="col-md-6">
+                <img src="~/img/@Html.DisplayFor(modelItem => item.Perfil)" width="105px" height="105px"/>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </div>
+                <div class="row">
+                    @Html.DisplayFor(modelItem => item.Nacimiento) - @Html.DisplayFor(modelItem => item.Nacionalidad)
+                </div>
+            </div>
+        </div>
+    }         
+</div>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Perfil)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nacimiento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nacionalidad)
-        </th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            <img src="~/img/@Html.DisplayFor(modelItem => item.Perfil)"/>
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nacimiento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nacionalidad)
-        </td>
-    </tr>
-}
-
-</table>
+        
