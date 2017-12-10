@@ -22,9 +22,9 @@ namespace cinemas.Controllers
             return View(DALPelicula.ListarProximamente());
         }
 
-        public ActionResult Formulario(string id="")
+        public ActionResult Formulario(string id = "")
         {
-            if (id.Length==0)
+            if (id.Length == 0)
                 return View("Index", DALPelicula.ListarEstrenos());
             else {
                 ViewBag.horas = DALPelicula.horas(id);
@@ -32,7 +32,7 @@ namespace cinemas.Controllers
                 return View();
             }
         }
-     [HttpPost]
+        [HttpPost]
         public ActionResult Asientos(string Nombre, string Pelicula, string Email, string Horario, string Fecha)
         {
             return View();

@@ -19,7 +19,6 @@ namespace cinemas.Models.DALs
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString()))
                 {
                     con.Open();
-                    var i = 1;
                     var query = new SqlCommand("SELECT * FROM recibo, horario, pe_ho, pelicula where pelicula.Id = pe_ho.id_pe and pe_ho.id_ho=horario.Id and recibo.id_pe_ho=pe_ho.Id", con);
                     using (var dr = query.ExecuteReader())
                     {
@@ -54,13 +53,13 @@ namespace cinemas.Models.DALs
                                     horaFin = dr["horaFin"].ToString(),
                                     horaInicio = dr["horaInicio"].ToString(),
                                 },
-                                RegistroId = i
+                                RegistroId = Convert.ToInt32(dr["Id"])
                             };
                             // Agregamos el usuario a la lista genreica
                             registros.Add(registro);
-                            i++;
                         }
                     }
+                    con.Close();
                 }
             }
             catch (Exception ex)
@@ -83,6 +82,7 @@ namespace cinemas.Models.DALs
         public static Registro Detalles(int id)
         {
             var registro = new Registro();
+            var ID = id;
             try
             {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString()))
@@ -90,7 +90,7 @@ namespace cinemas.Models.DALs
                     con.Open();
 
                     var query = new SqlCommand("SELECT * FROM recibo, horario, pe_ho, pelicula where pelicula.Id = pe_ho.id_pe and pe_ho.id_ho=horario.Id and recibo.id_pe_ho=pe_ho.Id and recibo.id=@Id", con);
-                    query.Parameters.AddWithValue("@Id", id.ToString());
+                    query.Parameters.AddWithValue("@Id", ID);
                     using (var dr = query.ExecuteReader())
                     {
                         while (dr.Read())
@@ -130,6 +130,7 @@ namespace cinemas.Models.DALs
                             // Agregamos el usuario a la lista genreica
                         }
                     }
+                    con.Close();
                 }
             }
             catch (Exception ex)
