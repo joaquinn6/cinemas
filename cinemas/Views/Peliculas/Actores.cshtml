@@ -8,8 +8,10 @@
                 <img src="~/img/@Html.DisplayFor(modelItem => item.Perfil)" width="105px" height="105px"/>
             </div>
             <div class="col-md-6">
-                <div class="row glyphicon-bold">
-                    @Html.DisplayFor(modelItem => item.Nombre)
+                <div class="row">
+                    <b>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </b>
                 </div>
                 <div class="row">
                     @Html.DisplayFor(modelItem => item.Nacimiento) - @Html.DisplayFor(modelItem => item.Nacionalidad)

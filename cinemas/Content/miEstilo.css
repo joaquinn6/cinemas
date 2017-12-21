@@ -6,3 +6,24 @@ height: 500px;
     background-color:white;
     border:none;
 }
+
+.asiento{
+    width:60px;
+    height:60px;
+    margin:3px;
+    cursor:pointer;
+    border:2px;
+    border-style:solid;
+    border-radius:6px;
+    background-color: crimson;
+}
+
+.ocupado{
+    background-color: crimson;
+    opacity: 0.2;
+}
+
+.seleccionado{
+    border-style:dashed;
+    background-color:lightseagreen;
+}

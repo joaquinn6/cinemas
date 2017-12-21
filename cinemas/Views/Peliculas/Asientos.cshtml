@@ -5,5 +5,31 @@
 }
 
 @{var nombre = Request.Form["Nombre"]; var Pelicula= Request.Form["Pelicula"]; var Email = Request.Form["Email"]; var Horario = Request.Form["Horario"]; var Fecha = Request.Form["Fecha"]; }
+<div class="container center-block">
+    <div class="row">
+        <div class="col-md-3 asiento ocupado">
 
-<h2>@Horario</h2>
+        </div>
+        <div class="col-md-3 asiento">
+
+        </div>
+        <div class="col-md-3 asiento seleccionado">
+
+        </div>
+        <div class="col-md-3">
+
+        </div>
+    </div>
+    @{ var j = 0;}
+    @for (j = 0; j < 6; j++)
+    {
+    <div class="row">
+        @{ var i = 0;}
+        @for (i = 0; i < 17; i++)
+        {
+            <div class="col-md-3 asiento">
+            </div>
+        }
+    </div>
+    }
+</div>

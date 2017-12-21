@@ -1,54 +1,12 @@
-﻿@model IEnumerable<cinemas.Models.Entities.Registro>
+﻿@model cinemas.Models.Entities.Registro
 
-<table class="table">
-    <tr>
-        <th>
-            Cliente
-        </th>
-        <th>
-            Pelicula
-        </th>
-        <th>
-            Fecha Pelicula
-        </th>
-        <th>
-            Reservado el
-        </th>
-        <th>
-            Asiento
-        </th>
-        <th>
-            Codigo
-        </th>
-        <th>
-            Correo
-        </th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.recibos.cliente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.peliculas.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.recibos.fechaPelicula)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.recibos.fechaNow)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.recibos.asiento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.recibos.codigo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.recibos.correo)
-        </td>
-    </tr>
-}
-
-</table>
+    <div class="panel panel-default panel-info">
+        <div class="panel-heading">
+            @Html.DisplayFor(modelItem => Model.recibos.cliente), @Html.DisplayFor(modelItem => Model.recibos.correo)
+        </div>
+        <div class="panel-body">
+            <p>@Html.DisplayFor(modelItem => Model.peliculas.Nombre) - @Html.DisplayFor(modelItem => Model.recibos.fechaPelicula) - @Html.DisplayFor(modelItem => Model.recibos.asiento)</p>
+            <p>Codigo de Verificacion: @Html.DisplayFor(modelItem => Model.recibos.codigo)</p>
+            <p class="text-right"> Fecha de compra: @Html.DisplayFor(modelItem => Model.recibos.fechaNow)</p>
+        </div>
+    </div>

@@ -1,14 +1,17 @@
+
+
+$(function () {
+
     $('.input-group.date').datepicker({
         format: "dd/mm/yyyy",
         maxViewMode: 0,
         language: "es",
-        todayHighlight:true,
+        todayHighlight: true,
         daysOfWeekDisabled: "0",
         autoclose: true,
         todayHighlight: true
     });
 
-$( function() {
     $("#datepicker").datepicker();
 
     $('.loadAjax').click(function (event) {
