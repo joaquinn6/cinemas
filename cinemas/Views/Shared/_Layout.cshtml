@@ -58,7 +58,7 @@
                         }
                         else
                         {
-                            <li><a href="Account/Login">Iniciar Sesion</a></li>
+                            <li>@Html.ActionLink("Ingresar", "Login", "Account")</li>
                         }
                     </ul>
                     <form class="navbar-form navbar-right">
@@ -83,6 +83,7 @@
     @RenderSection("scripts", required: false)
    
     <script src="~/Scripts/bootstrap-datepicker.min.js"></script>
-     <script src="~/Scripts/mio.js"></script>
+    <script src="~/Scripts/mio.js"></script>
+    <script src="~/Scripts/asientos.js"></script>
 </body>
 </html>

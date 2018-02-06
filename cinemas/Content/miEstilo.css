@@ -8,14 +8,24 @@ height: 500px;
 }
 
 .asiento{
-    width:60px;
-    height:60px;
-    margin:3px;
+    text-align: center;
+    color:honeydew;
+    height:40px;
+    margin-bottom: 15px;
     cursor:pointer;
     border:2px;
     border-style:solid;
     border-radius:6px;
     background-color: crimson;
+}
+
+.pantalla{
+    margin-top:70px;
+    height:15px;
+    background-color:darkcyan;
+    border: 1px;
+    border-style: solid;
+    border-radius: 8px;
 }
 
 .ocupado{

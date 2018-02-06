@@ -286,6 +286,7 @@
     <Content Include="img\TomHolland.jpg" />
     <Content Include="img\VinDiesel.jpg" />
     <Content Include="img\ZoeSaldaña.jpg" />
+    <Content Include="Scripts\asientos.js" />
     <Content Include="Scripts\bootstrap-datepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
