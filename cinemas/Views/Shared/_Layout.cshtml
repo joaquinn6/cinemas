@@ -51,15 +51,11 @@
                     <ul class="nav navbar-nav">
                         <li>@Html.ActionLink("Cartelera", "index", "peliculas")<span class="sr-only">(current)</span></a></li>
                         <li>@Html.ActionLink("Proximamente", "proximamente", "peliculas")</li>
-                    </ul>
-                    <ul class="nav navbar-nav">
-                        @if (User.IsInRole("Admin")) {
-                        <li>@Html.ActionLink("Registro", "Registro", "peliculas")</li>
-                        }
-                        else
+                        @if (User.IsInRole("Admin"))
                         {
-                            <li>@Html.ActionLink("Ingresar", "Login", "Account")</li>
+                            <li>@Html.ActionLink("Registro", "Registro", "peliculas")</li>
                         }
+                        @Html.Partial("_LoginPartial")
                     </ul>
                     <form class="navbar-form navbar-right">
                         <div class="form-group">
