@@ -53,5 +53,6 @@ namespace cinemas.Controllers
         {
             return PartialView(DALRegistro.Detalles(id));
         }
+        //subir
     }
 }
